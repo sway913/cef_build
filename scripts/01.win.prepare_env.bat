@@ -6,6 +6,15 @@ echo "-----------start----------"
 set DEPOT_TOOLS_DIR=%~dp0..\depot_tools
 set AUTOMATE_GIT_PATH=%~dp0..\automate\automate-git.py
 
+python --version >nul 2>&1
+if %errorlevel% equ 0 (
+    echo "Python have already installed"
+) else (
+    echo "Python uninstalled"
+	echo "you need installed python 3.9"
+	exit 0
+)
+
 @if not exist %DEPOT_TOOLS_DIR% (
     echo "Downloading depot_tools from CEF repository"
 	git clone https://chromium.googlesource.com/chromium/tools/depot_tools.git %DEPOT_TOOLS_DIR%
