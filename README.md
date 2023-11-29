@@ -53,10 +53,11 @@ branch: 要编译的分支，可以参考:[branches-supported](https://bitbucket
 
 
 ### 二、编译
-执行03.win.build_cef.bat进行编译(大概4个小时)，可以修改里面相关参数匹配好你的安装好的环境。
+执行03.win.build_cef.bat进行编译(若同时编译debug和release总共需要11个小时)，可以修改里面相关参数匹配好你的安装好的环境。
 
 ### 三、验收成果
 在chromium\src\out目录下，打开 cefclient.exe 文件，访问http://html5test.com 可简单查看功能编译情况。访问[HTML5 audio/video tester](https://tools.woolyss.com/html5-audio-video-tester) 来判断各种视频格式的支持情况
+在G:\cef_build\chromium_git\chromium\src\cef\binary_distrib目录是发布包，里面有发布二进制文件和相关pdb符号文件。
 
 ### 四、遇到的问题
 1、RuntimeError: requested profile "D:\code\chromium_git\chromium\src\chrome\build\pgo_profiles\chrome-win64-5414-1673458358-5348276ff887eb95bb837c1dd06e9efed673b8e4.profdata" doesn't exist, please make sure "checkout_pgo_profiles" is set to True in the "custom_vars" section of your .gclient file, e.g
