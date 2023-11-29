@@ -13,23 +13,24 @@
 
 在英文环境下编译才不会报错
 
-3、代码内文件路径不能太长，建议在根磁盘目录创建1个文件夹，推荐如下目录
+3、代码内文件路径不能太长，建议在磁盘根目录创建1个文件夹，推荐如下目录
 
 D:\\code\\scripts\\*.bat
 
 ### 一、源码下载
-执行01.win.prepare_env.bat下载好相关工具，然后执行02.win.download_source.bat下载源码(大概要下载50GB的内容)
+执行01.win.prepare_env.bat下载好相关工具，然后执行02.win.download_source.bat下载源码(大概要下载50GB的数据)
 
 在这里下载cef的5414版本，使用vs2019进行编译。
 
-参考:https://bitbucket.org/chromiumembedded/cef/wiki/BranchesAndBuilding.md
 
-vs2019安装需要勾选atl组件或者:
-$ PATH_TO_INSTALLER.EXE ^
+vs2019安装需要勾选atl组件或者
+在vs安装程序传入以下参数进行安装
+```bash
+ PATH_TO_INSTALLER.EXE ^
 --add Microsoft.VisualStudio.Workload.NativeDesktop ^
 --add Microsoft.VisualStudio.Component.VC.ATLMFC ^
 --includeRecommended
-
+```
 
 参数说明：
 
@@ -53,10 +54,11 @@ branch: 要编译的分支，可以参考:[branches-supported](https://bitbucket
 
 
 ### 二、编译
-执行03.win.build_cef.bat进行编译(若同时编译debug和release总共需要11个小时)，可以修改里面相关参数匹配好你的安装好的环境。
+执行03.win.build_cef.bat进行编译(若同时编译debug和release总共需要11个小时)，可以修改里面相关参数匹配好你实际安装好的环境。
 
 ### 三、验收成果
 在chromium\src\out目录下，打开 cefclient.exe 文件，访问http://html5test.com 可简单查看功能编译情况。访问[HTML5 audio/video tester](https://tools.woolyss.com/html5-audio-video-tester) 来判断各种视频格式的支持情况
+
 在G:\cef_build\chromium_git\chromium\src\cef\binary_distrib目录是发布包，里面有发布二进制文件和相关pdb符号文件。
 
 ### 四、遇到的问题
