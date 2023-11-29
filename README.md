@@ -17,6 +17,11 @@
 
 D:\\code\\scripts\\*.bat
 
+4、PC硬件资源
+
+至少220 GB空闲磁盘空间，8 GB RAM内存
+
+
 ### 一、源码下载
 执行01.win.prepare_env.bat下载好相关工具，然后执行02.win.download_source.bat下载源码(大概要下载50GB的数据)
 
