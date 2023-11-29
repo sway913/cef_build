@@ -23,14 +23,14 @@ D:\\code\\scripts\\*.bat
 在这里下载cef的5414版本，使用vs2019进行编译。
 
 
-vs2019安装需要勾选atl组件或者
-在vs安装程序传入以下参数进行安装
+vs2019安装需要勾选atl组件或者在vs安装程序传入以下参数进行安装
 ```bash
  PATH_TO_INSTALLER.EXE ^
 --add Microsoft.VisualStudio.Workload.NativeDesktop ^
 --add Microsoft.VisualStudio.Component.VC.ATLMFC ^
 --includeRecommended
 ```
+环境配置文档：https://bitbucket.org/chromiumembedded/cef/wiki/AutomatedBuildSetup.md#markdown-header-platform-build-configurations
 
 参数说明：
 
