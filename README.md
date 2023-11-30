@@ -24,9 +24,9 @@ D:\\code\\scripts\\*.bat
 
 ### 一、源码下载
 执行01.win.prepare_env.bat下载好相关工具，然后执行02.win.download_source.bat下载源码(大概要下载50GB的数据)
+若下载源码过程出现任何问题，不用怀疑，就是你的网络问题，请更换好点的网络环境。
 
 在这里下载cef的5414版本，使用vs2019进行编译。
-
 
 vs2019安装需要勾选atl组件或者在vs安装程序传入以下参数进行安装
 ```bash
@@ -56,7 +56,7 @@ branch: 要编译的分支，可以参考:[branches-supported](https://bitbucket
 
 
 ### 二、编译
-执行03.win.build_cef.bat进行编译(若同时编译debug和release总共需要11个小时)，可以修改里面相关参数匹配好你实际安装好的环境。
+执行03.win.build_cef.bat进行编译(若同时编译debug和release总共需要11个小时)，可以修改里面相关参数匹配好你实际安装好的环境(可以修改为vs2022的安装目录，实测可以用vs2022编译)。
 
 ### 三、验收成果
 在chromium\src\out目录下，打开 cefclient.exe 文件，访问http://html5test.com 可简单查看功能编译情况。访问[HTML5 audio/video tester](https://tools.woolyss.com/html5-audio-video-tester) 来判断各种视频格式的支持情况
