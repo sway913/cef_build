@@ -73,3 +73,12 @@ branch: 要编译的分支，可以参考:[branches-supported](https://bitbucket
 2、UnicodeDecodeError: 'utf-8' codec can't decode byte 0xd2 in position 738: invalid continuation byte
 
 需要把文件从UTF-8转为UTF-8-BOM编码，推荐用英文版系统编译，中文版要改的代码太多。
+
+3、网络问题
+RPC failed; curl 56 Recv failure: Connection was reset
+
+early EOF
+这些都是网络问题，建议使用稳定点的科学上网工具并且使用网线接入网络。
+
+
+
