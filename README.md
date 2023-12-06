@@ -63,7 +63,25 @@ branch: 要编译的分支，可以参考:[branches-supported](https://bitbucket
 
 在G:\cef_build\chromium_git\chromium\src\cef\binary_distrib目录是发布包，里面有发布二进制文件和相关pdb符号文件。
 
-### 四、遇到的问题
+### 四、源码修改
+
+可以修改源码进行自定义功能开发
+
+1、调试环境
+编译debug版本后把"G:\cef_build\chromium_git\chromium\src\cef\binary_distrib\cef_binary_109.1.18+gf1c41e4+chromium-109.0.5414.120_windows64_debug_symbols\libcef.dll.pdb" 文件放到你G:\cef_build\chromium_git\chromium\src\cef\binary_distrib\cef_binary_109.1.18+gf1c41e4+chromium-109.0.5414.120_windows64的CMake工程下的pdb加载目录，VS2022安装好[多进程调试工具](https://marketplace.visualstudio.com/items?itemName=vsdbgplat.MicrosoftChildProcessDebuggingPowerTool2022)  (为了懒得去判断该附加哪个进程)后把cef的源码拖进vs编辑器打上断点就行
+
+2、修改源码后增量编译
+
+执行命令进行单独的增量编译(10分钟)
+```bash
+cd G:\cef_build\chromium_git\chromium\src
+
+"G:\cef_build\chromium_git\chromium\src\third_party\ninja\ninja.exe" -v -C out\Debug_GN_x64 cefclient
+```
+或者修改03.win.build_cef.bat的编译参数，改成仅编译debug并且不打包,走完整的增量编译流程(20分钟)。
+编译后的文件在G:\cef_build\chromium_git\chromium\src\out\Debug_GN_x64目录，把libcef.dll和libcef.dll.pdb它们拷贝到你tests工程相关的引用目录去(G:\cef_build\chromium_git\chromium\src\cef\binary_distrib\cef_binary_109.1.18+gf1c41e4+chromium-109.0.5414.120_windows64\build\tests\cefclient\Debug)。
+
+### 五、遇到的问题
 1、RuntimeError: requested profile "D:\code\chromium_git\chromium\src\chrome\build\pgo_profiles\chrome-win64-5414-1673458358-5348276ff887eb95bb837c1dd06e9efed673b8e4.profdata" doesn't exist, please make sure "checkout_pgo_profiles" is set to True in the "custom_vars" section of your .gclient file, e.g
 
 出现这个报错需要设置chrome_pgo_phase=0
