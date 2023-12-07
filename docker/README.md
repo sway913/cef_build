@@ -27,7 +27,7 @@ Enable-WindowsOptionalFeature -Online -FeatureName $("Microsoft-Hyper-V", "Conta
 
 参考[docker配置](https://learn.microsoft.com/zh-cn/virtualization/windowscontainers/manage-docker/configure-docker-daemon)
 
-
+[容器中的持久性存储](https://learn.microsoft.com/zh-cn/virtualization/windowscontainers/manage-containers/persistent-storage)
 
 ### 安装编译环境的容器
 

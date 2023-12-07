@@ -7,6 +7,8 @@ USER ContainerAdministrator
 # Restore the default Windows shell for correct batch processing.
 SHELL ["cmd", "/S", "/C"]
 
+
+# install vs2022 for the docker container.
 RUN `
     # Download the Build Tools bootstrapper.
     curl -SL --output vs_buildtools.exe https://aka.ms/vs/17/release/vs_buildtools.exe `
@@ -26,6 +28,17 @@ RUN `
     `
     # Cleanup
     && del /q vs_buildtools.exe
+
+
+# Download and install Python
+ENV PY_VERSION=3.9.13
+
+RUN powershell.exe -Command `
+    $ErrorActionPreference = 'Stop'; `
+    [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; `
+    wget https://www.python.org/ftp/python/%PY_VERSION%/python-%PY_VERSION%.exe -OutFile c:\python-%PY_VERSION%.exe ; `
+    Start-Process c:\python-%PY_VERSION%.exe -ArgumentList '/quiet InstallAllUsers=1 PrependPath=1' -Wait ; `
+    Remove-Item c:\python-%PY_VERSION%.exe -Force
 
 # Define the entry point for the docker container.
 # This entry point starts the developer command prompt and launches the PowerShell shell.
