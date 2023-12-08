@@ -25,16 +25,35 @@ Enable-WindowsOptionalFeature -Online -FeatureName $("Microsoft-Hyper-V", "Conta
 1、Windows平台
 官网安装好docker
 
-参考[docker配置](https://learn.microsoft.com/zh-cn/virtualization/windowscontainers/manage-docker/configure-docker-daemon)
+参考：
+[windows下docker容器配置](https://learn.microsoft.com/zh-cn/virtualization/windowscontainers/manage-docker/configure-docker-daemon)
 
 [容器中的持久性存储](https://learn.microsoft.com/zh-cn/virtualization/windowscontainers/manage-containers/persistent-storage)
+
+[开发环境](https://learn.microsoft.com/zh-cn/virtualization/windowscontainers/samples?tabs=Application-frameworks)
+
+修改windows容器保存位置:
+修改"C:\ProgramData\Docker\config\daemon.json"文件:
+增加"data-root": "F:\\docker",(注意:目录必须不存在，得由docker来创建)
 
 ### 安装编译环境的容器
 
 #### windows
 
+若使用tap虚拟网卡的vpn网络需要单独设置NAT网络配置(建议直连使用自由的网络环境)
+
 执行下面的命令安装好容器和配置开发环境
 ```bash
 build_win.bat
 ```
+
+启动现有容器(容器已启动)
+```shell
+# 使用id
+docker exec -it b82ceb44fe3b cmd.exe
+# 使用容器名称
+docker exec -it win_dev cmd.exe
+```
+
+
 
