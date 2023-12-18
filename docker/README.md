@@ -6,6 +6,7 @@
 在管理员权限的PowerShell下执行下面的命令安装好windows的Containers功能
 ```bash
 Enable-WindowsOptionalFeature -Online -FeatureName $("Microsoft-Hyper-V", "Containers") -All
+```
 
 ### 安装docker
 
@@ -43,7 +44,6 @@ docker exec -it b82ceb44fe3b cmd.exe
 docker exec -it win_dev cmd.exe
 ```
 
-```
 若你上次使用了linux容器，这次需要windows容器需要执行，反之亦然。
 ```bash
 "C:\Program Files\Docker\Docker\DockerCli.exe" -SwitchWindowsEngine
