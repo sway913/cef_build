@@ -1,6 +1,6 @@
 # docker下进行编译
 
-## 系统环境设置
+## 一、系统环境设置
 
 1、Windows平台
 在管理员权限的PowerShell下执行下面的命令安装好windows的Containers功能
@@ -8,7 +8,7 @@
 Enable-WindowsOptionalFeature -Online -FeatureName $("Microsoft-Hyper-V", "Containers") -All
 ```
 
-### 安装docker
+### 二、安装docker
 
 1、Windows平台
 [官网](https://github.com/sway913/cef_build/tree/main/docker)安装好docker
@@ -25,7 +25,7 @@ Enable-WindowsOptionalFeature -Online -FeatureName $("Microsoft-Hyper-V", "Conta
 增加"data-root": "F:\\docker",(注意:目录必须不存在，得由docker来创建)
 或者在设置界面修改docker镜像保存位置(推荐)(C盘足够大的可以忽略)
 
-### 安装编译环境的容器
+### 三、安装编译环境的容器
 
 #### windows
 
