@@ -11,7 +11,7 @@ Enable-WindowsOptionalFeature -Online -FeatureName $("Microsoft-Hyper-V", "Conta
 ### 安装docker
 
 1、Windows平台
-(官网)(https://github.com/sway913/cef_build/tree/main/docker)安装好docker
+[官网](https://github.com/sway913/cef_build/tree/main/docker)安装好docker
 
 参考：
 [windows下docker容器配置](https://learn.microsoft.com/zh-cn/virtualization/windowscontainers/manage-docker/configure-docker-daemon)
