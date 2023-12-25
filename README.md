@@ -1,11 +1,11 @@
 [Chromium Embedded Framework Home Page](https://bitbucket.org/chromiumembedded/cef/wiki/Home)
 ====
+# 推荐环境
+
+推荐使用docker进行编译
 
 # cef在各平台的编译
 
-##推荐环境
-
-推荐使用docker进行编译
 
 ### 系统环境设置
 1、安装好python3.9并且设置到系统path环境
@@ -27,7 +27,7 @@ D:\\code\\scripts\\*.bat
 
 
 ### 一、源码下载
-执行01.win.prepare_env.bat下载好相关工具，然后执行02.win.download_source.bat下载源码(大概要下载50GB的数据)
+执行01.win.prepare_env.bat下载好相关工具，然后执行02.win.download_source.bat下载源码(大概要下载50GB的数据，加上编译过程的中间文件产物总共需要200GB左右的空间)
 若下载源码过程出现任何问题，不用怀疑，就是你的网络问题，请更换好点的网络环境。
 
 在这里下载cef的5414版本，使用vs2019进行编译。
